@@ -5,9 +5,9 @@ import json
 from vosk import Model, KaldiRecognizer
 
 # Path to your model directory and audio file
-model_path = "c:/Users/Sanla/Desktop/epitech/ia/T-IA/speech_to_text/models/vosk-model-fr-0.22"
-audio_file_path = "c:/Users/Sanla/Desktop/epitech/ia/T-IA/speech_to_text/audio.wav"
-output_file_path = "c:/Users/Sanla/Desktop/epitech/ia/T-IA/speech_to_text/output.txt"
+model_path = "./models/vosk-model-small-fr-0.22"
+audio_file_path = "./audio.wav"
+output_file_path = "./output.txt"
 
 # Load the Vosk model
 if not os.path.exists(model_path):

@@ -6,7 +6,7 @@ import pyaudio
 from vosk import Model, KaldiRecognizer
 
 # Path to your model directory
-model_path = "c:/Users/Sanla/Desktop/epitech/ia/T-IA/speech_to_text/models/vosk-model-fr-0.22"
+model_path = "./models/vosk-model-small-fr-0.22"
 
 # Load the Vosk model
 if not os.path.exists(model_path):
