@@ -27,22 +27,22 @@ After downloading, place the model in a `models` folder within the project direc
 ## Installation
 
 1. Clone the repository:
-   ```sh
-   git clone <repository-url>
+   ```
+      git clone https://github.com/sanlamamba/T-AIA-901_par_1.git
    ```
 
 2. Download the Vosk model for the desired language and place it in the `models` folder.
 
 3. Create a virtual environment and install the dependencies from the `requirements.txt` file:
-   ```sh
-   python -m venv venv
-   source venv/bin/activate   # On Windows use `venv\Scripts\activate`
-   pip install -r requirements.txt
+   ```
+      python -m venv venv
+      source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+      pip install -r requirements.txt
    ```
 
 4. Install PyAudio (if not already installed):
-   ```sh
-   pip install pyaudio
+   ```
+      pip install pyaudio
    ```
 
 ## Usage
@@ -51,7 +51,7 @@ After downloading, place the model in a `models` folder within the project direc
 
 To convert speech to text in real time using your microphone, run the following command:
 
-     ```sh
+     ```
           python stt_streaming.py
      ```
 
@@ -63,7 +63,7 @@ The script listens through the microphone, converting the spoken words into text
 
 To convert speech from an audio file to text, run the following command:
 
-     ```sh
+     ```
           python stt_file.py
      ```
 
