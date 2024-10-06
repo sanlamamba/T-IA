@@ -138,4 +138,5 @@ cython_debug/
 .DS_Store
 
 # Dataset
-data/dataset/
+data/dataset/*
+!data/dataset/brute_sentences.csv
