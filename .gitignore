@@ -140,3 +140,7 @@ cython_debug/
 # Dataset
 data/dataset/*
 !data/dataset/brute_sentences.csv
+
+# Model processed
+**/processed/*
+!**/processed/*.csv
