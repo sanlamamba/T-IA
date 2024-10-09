@@ -144,3 +144,6 @@ data/dataset/*
 # Model processed
 **/processed/*
 !**/processed/*.csv
+
+# AI Model
+!model/**/models/

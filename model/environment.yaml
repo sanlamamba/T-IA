@@ -1,4 +1,4 @@
-name: jupyter
+name: myenv
 
 channels:
  - defaults
@@ -13,8 +13,8 @@ dependencies:
   - plotly
   - matplotlib
   - seaborn
-  - scikit-learn:
-    - anaconda
+  - azure-storage-blob
+  - anaconda
   - transformers
   - pip
   - pip:
