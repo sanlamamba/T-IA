@@ -7,12 +7,13 @@ import folium
 import colorsys  
 
 BASE_DIR = './data/'
+PATHFINDER_DIR = './pathfinder/'
 gare_df = pd.read_csv(BASE_DIR + 'liste-des-gares.csv', delimiter=';')
 ligne_df = pd.read_csv(BASE_DIR + 'formes-des-lignes-du-rfn.csv', delimiter=';')
 
 include_geo_shape = False 
 
-prepared_df = gare_df[['CODE_UIC', 'LIBELLE', 'CODE_LIGNE', 'Geo Shape']].copy().head(20)
+prepared_df = gare_df[['CODE_UIC', 'LIBELLE', 'CODE_LIGNE', 'Geo Shape']].copy()
 prepared_df['connected_to'] = None
 
 def generate_color(hue=0, saturation=0.5, lightness=0.5, depth=0):
@@ -31,8 +32,8 @@ def calculate_connected_stations(index, row, gare_df, ligne_df, include_geo_shap
         current_station_code = row['CODE_UIC']
         current_station_libelle = row['LIBELLE']
         current_line_code = row['CODE_LIGNE']
-    
         current_station_coords = row['Geo Shape']
+    
         if isinstance(current_station_coords, str):
             current_station_coords = json.loads(current_station_coords)['coordinates']
         
@@ -81,7 +82,7 @@ for index, connected_info in results:
 
 print("Fin Préparation des données.")
 
-prepared_df.to_csv('prepared_station_data.csv', index=False)
+prepared_df.to_csv(PATHFINDER_DIR + "output/" 'prepared_station_data.csv', index=False)
 
 print("Preparation Visualisation.")
 map_france = folium.Map(location=[46.603354, 1.888334], zoom_start=6)
@@ -114,5 +115,5 @@ if include_geo_shape:
 
 filename = include_geo_shape and 'station_map_with_railways.html' or 'station_map.html'
 
-map_france.save(filename)
+map_france.save(PATHFINDER_DIR + "output/" + filename)
 print("Fin")
